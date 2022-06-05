@@ -1,0 +1,440 @@
+@import './icons.less';
+// Color variables (appears count calculates by raw css)
+@color0: #000000; // Appears 9 times
+@color1: #ffffff; // Appears 8 times
+@color2: #aaaaaa; // Appears 6 times
+@color3: #333333; // Appears 3 times
+@color4: #eeeeee; // Appears 3 times
+@color5: #666666; // Appears 2 times
+@color6: #cccccc; // Appears 2 times
+@color7: #e4eaee; // Appears 2 times
+@color8: #999999; // Appears 2 times
+@color9: #f6f8fa; // Appears 2 times
+
+// Width variables (appears count calculates by raw css)
+@width1: 100%; // Appears 4 times
+
+// Height variables (appears count calculates by raw css)
+@height1: 34px; // Appears 2 times
+@height2: 100%; // Appears 2 times
+@height4: 28px; // Appears 2 times
+
+div.c-selectpage {
+	box-sizing: border-box;
+	font-family: fonts;
+	div.sp-input-container {
+		position: relative;
+		span.sp-placeholder {
+			color: @color2;
+		}
+		div.sp-base {
+			box-shadow: none;
+			transition: border-color ease-in-out 0.15s, background-color ease-in-out 0.3s;
+			background-color: @color1;
+			background-image: none;
+			border-radius: 4px;
+			border: 1px solid #ced4da;
+			box-shadow: none;
+			box-sizing: border-box;
+			color: #555555;
+			display: block;
+			font-size: 14px;
+			height: @height1;
+			line-height: 1.42857143;
+			padding: 6px 12px;
+			transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, background-color ease-in-out 0.3s;
+			will-change: border-color, box-shadow, background-color;
+		}
+		div.sp-input {
+			background-color: @color1;
+			color: @color3;
+			cursor: pointer;
+			opacity: 1;
+		}
+		div.sp-inputs {
+			clear: both;
+			cursor: pointer;
+			font-size: 14px;
+			height: auto;
+			list-style: none;
+			min-height: @height1;
+			overflow: hidden;
+			padding: 3px 24px 0 3px;
+			position: relative;
+			span.sp-placeholder {
+				display: inline-block;
+				margin-left: 9px;
+				margin-top: 3px;
+			}
+			span.sp-selected-tag {
+				-webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1);
+				background-color: @color7;
+				border-radius: 3px;
+				box-sizing: content-box;
+				cursor: pointer;
+				float: left;
+				line-height: 1.42;
+				list-style: none;
+				margin: 0 3px 3px 0;
+				max-width: @width1;
+				padding: 3px 8px;
+				position: relative;
+				transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1);
+				&:hover {
+					background-color: @color1;
+					box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+				}
+				i {
+					color: @color2;
+					font-size: 14px;
+					margin-left: 3px;
+					&:hover {
+						color: @color0;
+					}
+				}
+			}
+		}
+		div.sp-clear {
+			box-sizing: border-box;
+			color: @color8;
+			cursor: pointer;
+			display: block;
+			font-size: 20px;
+			font-weight: 600;
+			height: @height2;
+			line-height: 1;
+			margin: 0;
+			padding: 4px 0 0 0;
+			position: absolute;
+			right: 25px;
+			top: 0;
+			width: auto;
+			i {
+				font-size: 12px;
+			}
+			&:hover {
+				color: @color0;
+				font-weight: bold;
+			}
+		}
+		div.sp-button {
+			border-bottom-right-radius: 0;
+			border-top-right-radius: 0;
+			border: 0;
+			box-sizing: border-box;
+			cursor: pointer;
+			display: inline-block;
+			height: @height2;
+			line-height: @height2;
+			padding: 0;
+			position: absolute;
+			right: 0;
+			text-align: center;
+			top: 0;
+			vertical-align: middle;
+			width: 24px;
+			span.sp-caret {
+				border-left: 4px solid transparent;
+				border-right: 4px solid transparent;
+				border-top: 4px dashed;
+				display: inline-block;
+				height: 0;
+				margin-left: 2px;
+				margin-top: -1px;
+				position: absolute;
+				right: 12px;
+				top: 50%;
+				transition: transform 0.2s ease;
+				vertical-align: middle;
+				width: 0;
+			}
+		}
+		div.sp-button.open {
+			span.sp-caret {
+				transform: rotate(180deg);
+			}
+		}
+	}
+	div.sp-input-container.sp-open {
+		div.sp-input {
+			background-color: #f9f9f9;
+			border-radius: 2px;
+			border: 1px solid @color2;
+			color: @color0;
+		}
+		div.sp-inputs {
+			border-radius: 2px;
+			border: 1px solid @color2;
+			color: @color0;
+		}
+	}
+	div.sp-input-container.sp-disabled {
+		div.sp-input {
+			background-color: @color4;
+			color: @color2;
+			cursor: not-allowed;
+		}
+		div.sp-inputs {
+			background-color: @color4;
+			color: @color2;
+			cursor: not-allowed;
+		}
+		div.sp-button {
+			cursor: not-allowed;
+		}
+	}
+}
+div.sp-header {
+	background-color: @color1;
+	font-family: fonts;
+	button {
+		background: 0 0;
+		border: 0;
+		color: @color8;
+		cursor: pointer;
+		font-size: 21px;
+		line-height: @height2;
+		outline: none;
+		padding: 0;
+		position: absolute;
+		top: 3px;
+		&:hover {
+			color: @color0;
+		}
+	}
+	button.sp-close-btn {
+		right: 9px;
+	}
+	button.sp-remove-all-btn {
+		right: 55px;
+	}
+	button.sp-select-all-btn {
+		right: 81px;
+	}
+	button.sp-clear-all-btn {
+		right: 31px;
+	}
+}
+div.sp-header > h3 {
+	color: #24292e;
+	font-size: 16px;
+	font-weight: 500;
+	height: 18px;
+	margin: 6px 100px 0 10px;
+	text-align: left;
+	white-space: nowrap;
+}
+.sp-search {
+	background-color: @color1;
+	font-family: fonts;
+	padding: 10px;
+	.sp-search-input {
+		background-color: @color4;
+		border-radius: 2px;
+		border: 0;
+		box-sizing: border-box;
+		display: block;
+		font-size: 14px;
+		line-height: 1.43;
+		margin: 0 !important;
+		outline: none !important;
+		padding: 4px 6px;
+		transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+		width: @width1;
+		will-change: border-color, box-shadow, background-color;
+		&:focus {
+			background-color: #f5f5f5;
+		}
+	}
+	.sp-search-input.sp-search-input--rtl {
+		direction: rtl;
+	}
+}
+div.sp-result-area {
+	background-color: @color1;
+	font-family: fonts;
+	max-height: 320px;
+	min-width: 300px;
+	overflow-y: auto;
+	ul.sp-results {
+		background-color: @color1;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li {
+			color: @color5;
+			cursor: pointer;
+			font-size: 14px;
+			height: auto !important;
+			line-height: 1.43;
+			margin: 0;
+			overflow: hidden;
+			padding: 3px 10px;
+			position: relative;
+			text-align: left;
+			white-space: nowrap;
+		}
+		li.sp-over {
+			background-color: @color9 !important;
+			color: @color0 !important;
+			cursor: pointer;
+		}
+		li.sp-selected {
+			color: @color6;
+			cursor: default;
+		}
+		li.sp-rtl {
+			direction: rtl;
+			text-align: right;
+		}
+	}
+	div.sp-result-message {
+		font-family: fonts;
+		padding: 10px;
+		text-align: center;
+	}
+	table.sp-table {
+		border-spacing: 0;
+		width: @width1;
+		td {
+			border: 0 !important;
+			color: @color5;
+			font-size: 14px;
+			line-height: 1.43;
+			padding: 4px 8px;
+		}
+		th {
+			border: 0 !important;
+			color: @color3;
+			font-size: 14px;
+			font-size: 15px;
+			font-weight: 600;
+			line-height: 1.43;
+			padding: 0 8px 5px;
+			text-align: left;
+		}
+		tbody {
+			tr.sp-over {
+				td {
+					background-color: @color9 !important;
+					color: @color0 !important;
+					cursor: pointer;
+				}
+			}
+			tr.sp-selected {
+				td {
+					color: @color6;
+					cursor: default;
+				}
+			}
+			tr.sp-rtl {
+				td {
+					direction: rtl;
+					text-align: right;
+				}
+			}
+		}
+		thead {
+			tr.sp-rtl {
+				th {
+					direction: rtl;
+					text-align: right;
+				}
+			}
+		}
+	}
+}
+div.sp-pagination {
+	background-color: @color1;
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	font-family: fonts;
+	font-size: 14px;
+	padding: 0;
+	position: relative;
+	text-align: center;
+	div.sp-page-info {
+		color: @color3;
+		font-weight: 400;
+		height: @height4;
+		line-height: @height4;
+	}
+	ul {
+		border-bottom-left-radius: 2px;
+		border-bottom-right-radius: 2px;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		text-align: left;
+		top: 0;
+		width: @width1;
+		li {
+			display: inline-block;
+			text-align: center;
+			a {
+				background: transparent;
+				color: #6a737d;
+				cursor: pointer;
+				display: inline-block;
+				font-size: 14px;
+				height: @height4;
+				line-height: 1;
+				padding: 7px 7px 5px 7px;
+				text-decoration: none;
+				&:hover {
+					color: @color0;
+					font-weight: bold;
+				}
+			}
+		}
+		li.sp-right {
+			float: right;
+		}
+		lifirst-child {
+			border-bottom-left-radius: 2px;
+		}
+		lilast-child {
+			border-bottom-right-radius: 2px;
+		}
+		li.sp-disabled {
+			a {
+				color: #dddddd;
+				font-weight: normal;
+			}
+		}
+	}
+}
+div.sp-message {
+	background-color: @color7;
+	color: @color0;
+	font-family: fonts;
+	padding: 10px;
+	position: relative;
+	i {
+		font-size: 22px;
+		position: absolute;
+		top: 6px;
+	}
+	span {
+		font-size: 16px;
+		margin-left: 30px;
+	}
+}
+.sp-message-slide-enter-active {
+	transition: opacity 300ms;
+}
+.sp-message-slide-leave-active {
+	transition: opacity 300ms;
+}
+.sp-message-slide-enter {
+	opacity: 0;
+}
+.sp-message-slide-leave-to {
+	opacity: 0;
+}
+.sp-message-slide-enter-to {
+	opacity: 1;
+}
+.sp-message-slide-leave {
+	opacity: 1;
+}
